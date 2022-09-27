@@ -1,5 +1,5 @@
 var translateBtn = document.querySelector('#btn-translate');
-var textinput = document.querySelector('textarea');
+var textinput = document.querySelector('#textarea');
 var outputarea = document.querySelector('#output');
 
 // Use Mock API for testing otherwise rate limit issue
