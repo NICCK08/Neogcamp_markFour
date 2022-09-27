@@ -1,53 +1,33 @@
-var translateBtn = document.querySelector('#btn-translate');
-var textinput = document.querySelector('#textarea');
-var outputarea = document.querySelector('#output');
+var btnTranslate = document.querySelector("#btn-translate");
+var txtInput = document.querySelector("#txt-input");
+var outputDiv = document.querySelector("#output");
 
-// Use Mock API for testing otherwise rate limit issue
-// var serviceURL = 'https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json';
+// var serverURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json"
 
-var serviceURL = 'https://api.funtranslations.com/translate/minion.json';
+var serverURL = "https://api.funtranslations.com/translate/minion.json"
 
-var colors = {
-    errorColor: '#fecdd3',
-    white :'#FFFFFF'
+
+function getTranslationURL(input) {
+    return serverURL + "?" + "text=" + input
 }
 
-function constructURL(textinput){
-    return serviceURL + '?text=' + textinput };
+function errorHandler(error) {
+    console.log("error occured", error);
+    alert("something wrong with server! try again after some time")
+}
 
-function errorHandler(error){
-
-    if (error instanceof TypeError)
-    {
-        outputarea.innerText = 'Error Alert! It seems the Minions are busy finding Gru. Try again in an hour!'
-    } else {
-        outputarea.innerText = error
-    }
-    
-    outputarea.style.backgroundColor = colors.errorColor;
-};
-
-
-function dofetch(textinput){
-    fetch(constructURL(textinput))
-    .then(response => response.json())
-    .then(data => {var translatedText = data.contents.translated
-        outputarea.innerText = translatedText})
-    .catch(errorHandler)
-};
 
 function clickHandler() {
-    // Put styling back to default in case error occured in last call
-    outputarea.style.backgroundColor = colors.white;
-    outputarea.innerText = '';
-    var translationText = textinput.value;
-    if (translationText.length === 0) {
-        outputarea.innerText = 'Please enter something to translate!'
-        outputarea.style.backgroundColor = colors.errorColor;
-    } else {
-        dofetch(translationText);
-    }
-    
+    var inputText = txtInput.value; // taking input
+
+    // calling server for processing
+    fetch(getTranslationURL(inputText))
+        .then(response => response.json())
+        .then(json => {
+            var translatedText = json.contents.translated;
+            outputDiv.innerText = translatedText; // output
+           })
+        .catch(errorHandler)
 };
 
-translateBtn.addEventListener("click", clickHandler)
+btnTranslate.addEventListener("click", clickHandler)
