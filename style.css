@@ -77,7 +77,8 @@ footer p{
 }
 
 #btn-translate{
-  background-color: var(--primary-color);
+  
+  background-color: var(--grey-black);
   padding: 1rem;
   margin: 0rem 5rem 1rem 9rem;
   font-family: inherit;
