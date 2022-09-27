@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@600&display=swap');
 
 
+
 #main {
     display: block;
     width: 70%;
@@ -62,4 +63,8 @@ h1{
    transition: background-colour 2s;
     
 }
-
+/* ######## Hover animation ######### */
+#btn-translate:hover{
+    background-color: #FCE029 ;
+    color: #0A75BC;
+}
