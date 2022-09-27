@@ -1,33 +1,34 @@
+//defining variables
 var btnTranslate = document.querySelector("#btn-translate");
-var txtInput = document.querySelector("#txt-input");
-var outputDiv = document.querySelector("#output");
+var txtInput = document.querySelector("#input-txt");
+var txtOutput = document.querySelector("#output-txt");
 
-// var serverURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json"
-
+//providing the server api url
 var serverURL = "https://api.funtranslations.com/translate/minion.json"
 
-
-function getTranslationURL(input) {
-    return serverURL + "?" + "text=" + input
+//modifying the url to add the input from our website
+function serverTranslation(text) {
+   return serverURL + "?text=" + text
 }
 
+//defining an error handler if there is an error with fetching the api
 function errorHandler(error) {
-    console.log("error occured", error);
-    alert("something wrong with server! try again after some time")
+    alert("Sorry Something went wrong! It could be due to excessive use of the limited API or because the server is down. Please try again later. Meanwhile you can check my other projects.")
 }
 
-
+//function to perform when you click the button
 function clickHandler() {
-    var inputText = txtInput.value; // taking input
+    
+    var input = txtInput.value; //taking the input given by user
 
-    // calling server for processing
-    fetch(getTranslationURL(inputText))
-        .then(response => response.json())
-        .then(json => {
-            var translatedText = json.contents.translated;
-            outputDiv.innerText = translatedText; // output
-           })
-        .catch(errorHandler)
+    fetch(serverTranslation(input)) //fetch- fetches the url given to it
+    .then(response => response.json()) //then take response and convert to json
+    .then(json => {
+            var translatedTxt = json.contents.translated;
+            txtOutput.innerText = translatedTxt;
+    }) //take the json and perform the commands withtin the curly brackets
+    .catch (errorHandler) //perform errorHandler function if there is an error
+
 };
 
-btnTranslate.addEventListener("click", clickHandler)
+btnTranslate.addEventListener("click",clickHandler) //if there is a click event, the do the function called clickHandler
