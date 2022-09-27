@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@600&display=swap');
 
-.body{
+#body{
     border-left: solid #05436d 20px;
-    background-color: #FFFACD;
+    background-color: #d1c025;
 }
 
 #main {
@@ -23,7 +23,6 @@ h1{
 #main div{
     width: 70%;
     margin: auto;
-    background-color: #FCE029;
 }
 
 #main div:nth-child(3){
