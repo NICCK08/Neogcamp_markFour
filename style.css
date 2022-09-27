@@ -1,74 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Exo:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap');
 
-.body{
-    border-left: solid #05436d 20px;
-    background-color: #d1c025;
-    color: #FCE029;
-}
-
-#main {
-    display: block;
-    width: 70%;
-    max-width: 800px;
-    margin: auto; 
-    margin-top: 50px;
-}
-
-h1{
+body {
+    font-family: 'Merriweather', serif;
+    margin: auto;
+    color: #333333;
     text-align: center;
-    font-family: 'Syne Mono', monospace;
-    font-size: 36px;
 }
 
-#main div{
+:root {
+    --primary: #F2C94C;
+    --black: #333333;
+    --width-break: 600px;
+}
+
+.navigation{
+    background-color: var(--primary);
+    color: black;
+    padding: 2rem;
+    
+}
+.navigation .nav-name{
+    font-weight: bolder;
+}
+.navigation .nav-name h1{
+    text-align: center;
+}
+
+.txt-input{
+    font-family: 'Merriweather', serif;
+    font-size: large;
     width: 70%;
-    margin: auto;
+    height: 20vh;
+    margin: 1rem 1rem;
+    padding: 1rem;
+    background-color: transparent;
+    text-align: center;
 }
 
-#main div:nth-child(3){
-    width: 100px;
-    margin: auto;
-}
-
-#input-txt{
-    width: 100%;
-    height: 120px;
-    padding: 4%;
-    border: solid #0A75BC 1.5px;
-    border-radius: 12px;
-    font-family: 'Exo', sans-serif;
-    font-size: 20px;
-    transition: background-colour 2s;
-
+.output-div{
+    font-family: 'Merriweather', serif;
+    font-size: larger;
+    border: 1px solid black;
+    width: 70%;
+    height: 20vh;
+    margin: 1rem 1rem;
+    padding: 1rem;
+    display:inline-block;
+    vertical-align: middle;
 }
 
 #btn-translate{
-    width: 150px;
-    height: 40px;
-    margin: 20px 0%;
-    border: solid #231F20 1.5px ;
-    border-radius: 12px;
-    font-family: 'Syne Mono', monospace;
-    font-size: 20px;
-    background-color: #0A75BC;
-    color: #FCE029;
-    transition: background-colour 2s;
+    font-family: 'Merriweather', serif;
+    border: 1px solid var(--primary) ;
+    margin: 1rem 1rem;
+    padding: 1rem;
+    background-color: var(--primary);
+    text-align: center;    
 }
 
-#output-txt{
-    width: 100%;
-    height: 120px;
-    padding: 4%;
-    border: solid #0A75BC 1.5px;
-    border-radius: 12px;
-    font-family: 'Exo', sans-serif;
-    font-size: 20px;
-    transition: background-colour 2s;
-    
+.footer{ 
+    background-color: var(--primary);
+    padding: 2rem 1rem;
+    text-align: center;
+    color: black;    
 }
-/* ######## Hover animation ######### */
-#btn-translate:hover{
-    background-color: #FCE029 ;
-    color: #0A75BC;
+
+.footer .footer-header{
+    font-weight: normal;
+}
+
+.center-body {
+    text-align: center;
 }
