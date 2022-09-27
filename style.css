@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@600&display=swap');
 
-
+body{
+       border-left: solid #05436d 20px;
+      background-color: #FFFACD;
+}
 
 #main {
     display: block;
